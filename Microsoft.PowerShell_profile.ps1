@@ -1,6 +1,8 @@
 Add-PSSnapin AzureManagementCmdletsSnapIn
 Add-PSSnapin CloudServicesCmdlets
 
+. 'C:\projectsgit\posh-git\profile.example.ps1'
+
 function Start-Explorer{
 	if(!$args) { explorer . }
 	else { explorer $args }
@@ -53,7 +55,7 @@ Register-EngineEvent PowerShell.Exiting {
 Import-CliXml "$home\pshist.xml" | Add-History
 
 #Set environment variables for Visual Studio Command Prompt
-pushd 'c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC'
+pushd 'c:\Program Files (x86)\Microsoft Visual Studio 11.0\VC'
 cmd /c "vcvarsall.bat&set" |
 foreach {
   if ($_ -match "=") {
