@@ -3,6 +3,8 @@ Add-PSSnapin CloudServicesCmdlets
 
 . 'C:\projectsgit\posh-git\profile.example.ps1'
 
+. 'C:\DevKit\devkitvars.ps1'
+
 function Start-Explorer{
 	if(!$args) { explorer . }
 	else { explorer $args }
